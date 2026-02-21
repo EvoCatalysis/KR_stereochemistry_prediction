@@ -42,9 +42,9 @@ Input must be a FASTA file containing one or more KR domain amino-acid sequences
 Example:
 ```bash
 >KR_001
-MSTAVALAGGDLGVT...
+TYLITGGTGYLGLK...
 >KR_002
-GAFDLVKELADK...
+GTVLVTGGTGA...
 ```
 ## Usage
 Run KR stereochemistry prediction from the project root directory:
@@ -67,8 +67,8 @@ Probability_A_type: predicted probability for an A-type KR
 Example:
 ```bash
 Sequence_ID,Predicted_Type,Probability_A_type
-KR_001,A-type,0.93
-KR_002,B-type,0.07
+KR_001,B-type,0.0892843
+KR_002,A-type,0.6946625
 ```
 
 ## Training Models
