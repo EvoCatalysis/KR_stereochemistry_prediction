@@ -31,6 +31,11 @@ conda activate kr_esm
 ```bash
 pip install -r requirements.txt
 ```
+### 4. Install bioinformatics tools
+```bash
+conda install -c conda-forge -c bioconda hmmer mafft -y
+```
+
 If PyTorch is not installed automatically, install it explicitly:
 ```bash
 python -m pip install torch
