@@ -47,11 +47,35 @@ TYLITGGTGYLGLK...
 GTVLVTGGTGA...
 ```
 ## Usage
-Run KR stereochemistry prediction from the project root directory:
+
+## Step 1. KR Activity Filtering (Active vs Inactive)
+
+Before stereochemical prediction, KR domains are filtered to remove inactive C-type KRs that do not perform β-reduction.
+
+This step uses two HMM profiles:
+- KR_active.hmm (A/B-type KRs)
+- KR_Ctype.hmm (inactive C-type KRs)
+
+Run:
+
+```bash
+python active_inactive.py example.fasta KR_active.hmm KR_Ctype.hmm
+```
+Output:
+```bash
+result.tsv
+```
+Example:
+```bash
+KR_001, active
+KR_002, active
+```
+
+## Step 2 KR stereochemistry prediction
 ```bash
 python run_predict_esm.py --fasta example.fasta
 ```
-## Output
+Output:
 The script generates a CSV file containing prediction results:
 ```bash
 KR_predictions_XGB.csv
