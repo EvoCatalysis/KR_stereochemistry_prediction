@@ -2,6 +2,7 @@ import torch, esm, numpy as np, pandas as pd
 from Bio import SeqIO
 from tqdm import tqdm
 import joblib
+from xgboost import XGBClassifier
 
 def predict_from_fasta(
     fasta_path,
@@ -13,9 +14,10 @@ def predict_from_fasta(
     # ==========================
     # Load trained model + scaler
     # ==========================
-    xgb_model = joblib.load(model_path)
-    scaler = joblib.load(scaler_path)
+    xgb_model = XGBClassifier()
+    xgb_model.load_model(model_path)
 
+    scaler = joblib.load(scaler_path)
     # ==========================
     # Load ESM2-3B
     # ==========================
