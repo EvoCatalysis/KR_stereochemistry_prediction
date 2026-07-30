@@ -6,7 +6,7 @@ def main():
         description="KR stereochemistry prediction using ESM2-3B + XGBoost"
     )
     parser.add_argument("--fasta", required=True, help="Input FASTA file")
-    parser.add_argument("--model", default="models/xgb_final_ESM2_3B.pkl")
+    parser.add_argument("--model", default="models/xgb_final_ESM2_3B.json")
     parser.add_argument("--scaler", default="models/scaler_ESM2_3B.pkl")
     parser.add_argument("--out", default="KR_predictions_XGB.csv")
     args = parser.parse_args()
